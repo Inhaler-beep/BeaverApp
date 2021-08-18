@@ -6,4 +6,6 @@
     <string name="Username">Gautham,</string>
     <string name="Beginner">Beginner</string>
     <string name="Intermediate">Intermediate</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="send_otp">SEND OTP</string>
 </resources>
