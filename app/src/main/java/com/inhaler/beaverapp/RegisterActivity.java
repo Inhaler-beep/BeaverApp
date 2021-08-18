@@ -17,6 +17,7 @@ import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
+import java.util.regex.*;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -36,38 +37,67 @@ public class RegisterActivity extends AppCompatActivity {
         sendOtp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PhoneAuthOptions options =
-                        PhoneAuthOptions.newBuilder(mAuth)
-                                .setPhoneNumber("+91"+phoneNumber.getText().toString())       // Phone number to verify
-                                .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                                .setActivity(RegisterActivity.this)                 // Activity (for callback binding)
-                                .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                                    @Override
-                                    public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                        Toast.makeText(getApplicationContext(), "Otp Success", Toast.LENGTH_SHORT).show();
-                                    }
 
-                                    @Override
-                                    public void onVerificationFailed(@NonNull FirebaseException e) {
-                                        Toast.makeText(getApplicationContext(), "Otp Failed"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                boolean flag = Validate();
+                if(flag)
+                {
+                    PhoneAuthOptions options =
+                            PhoneAuthOptions.newBuilder(mAuth)
+                                    .setPhoneNumber("+91"+phoneNumber.getText().toString())       // Phone number to verify
+                                    .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                                    .setActivity(RegisterActivity.this)                 // Activity (for callback binding)
+                                    .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                                        @Override
+                                        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                            Toast.makeText(getApplicationContext(), "Otp Success", Toast.LENGTH_SHORT).show();
+                                        }
 
-                                    }
+                                        @Override
+                                        public void onVerificationFailed(@NonNull FirebaseException e) {
+                                            Toast.makeText(getApplicationContext(), "Otp Failed"+e.getMessage(), Toast.LENGTH_SHORT).show();
 
-                                    @Override
-                                    public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                                        super.onCodeSent(verificationId, forceResendingToken);
+                                        }
+
+                                        @Override
+                                        public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                            super.onCodeSent(verificationId, forceResendingToken);
 
 
 
-                                        Intent verifyIntent = new Intent(getApplicationContext(),VerificationActivity.class);
-                                        verifyIntent.putExtra("phonenumber",phoneNumber.getText().toString());
-                                        verifyIntent.putExtra("backendotp",verificationId);
-                                        startActivity(verifyIntent);
-                                    }
-                                })          // OnVerificationStateChangedCallbacks
-                                .build();
-                PhoneAuthProvider.verifyPhoneNumber(options);
+                                            Intent verifyIntent = new Intent(getApplicationContext(),VerificationActivity.class);
+                                            verifyIntent.putExtra("phonenumber",phoneNumber.getText().toString());
+                                            verifyIntent.putExtra("backendotp",verificationId);
+                                            startActivity(verifyIntent);
+                                        }
+                                    })          // OnVerificationStateChangedCallbacks
+                                    .build();
+                    PhoneAuthProvider.verifyPhoneNumber(options);
+                }
+
             }
         });
+    }
+
+    private Boolean Validate() {
+        boolean flag = true;
+        String phonenumber = phoneNumber.getText().toString();
+        if(phonenumber.length() != 10)
+        {
+            if(phonenumber.matches("^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$"))
+            {
+                flag = false;
+                Toast.makeText(RegisterActivity.this, "Please Enter in Correct Format", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                flag = false;
+                Toast.makeText(RegisterActivity.this, "Please Enter a Valid Number", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+
+
+        return flag;
     }
 }

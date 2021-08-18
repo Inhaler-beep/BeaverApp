@@ -46,7 +46,7 @@ public class VerificationActivity extends AppCompatActivity {
 
                                 if(task.isSuccessful())
                                 {
-                                    Toast.makeText(getApplicationContext(), "OTP Verification Completed :"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "OTP Verification Completed :", Toast.LENGTH_SHORT).show();
                                 }
                                 else
                                 {
