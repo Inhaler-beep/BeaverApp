@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "339364059447",
+    "project_id": "beaver-education",
+    "storage_bucket": "beaver-education.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339364059447:android:67cfd12b442afc1e0e62b2",
+        "android_client_info": {
+          "package_name": "com.inhaler.beaverapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339364059447-epv64sv9c431kmk7b8qa65sj3rkqdihc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inhaler.beaverapp",
+            "certificate_hash": "c0295c321b43ef31a4fe94ad94794c238fc9604c"
+          }
+        },
+        {
+          "client_id": "339364059447-e92cch7vvovcqmf9312fth7nmgi23j4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKrN7ixjsJCHoZliq4HauXGiu24loLbPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339364059447-e92cch7vvovcqmf9312fth7nmgi23j4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
