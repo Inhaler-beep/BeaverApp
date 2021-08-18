@@ -34,8 +34,6 @@ public class VerificationActivity extends AppCompatActivity {
         phonenumber = getIntent().getStringExtra("phonenumber");
         backendotp = getIntent().getStringExtra("backendotp");
 
-        Toast.makeText(VerificationActivity.this, "OTP is "+backendotp, Toast.LENGTH_LONG).show();
-
         verifyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +46,7 @@ public class VerificationActivity extends AppCompatActivity {
 
                                 if(task.isSuccessful())
                                 {
-                                    Toast.makeText(getApplicationContext(), "Verification COmpleted", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "OTP Verification Completed :"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                                 else
                                 {

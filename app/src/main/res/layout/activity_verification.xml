@@ -1,31 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/primary_variant"
     android:layout_height="match_parent"
     tools:context=".VerificationActivity">
 
 
-    <EditText
-        android:id="@+id/otp_input"
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:background="@drawable/white_round_background"
-        android:padding="10dp" />
+        android:elevation="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="40dp">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="VERIFY"
-        android:fontFamily="@font/poppins_medium"
-        android:background="@drawable/ripple_button"
-        android:layout_below="@id/otp_input"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/verify_button"/>
+        <EditText
+            android:id="@+id/otp_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/text_input_bg"
+            android:fontFamily="@font/poppins_medium"
+            android:hint="@string/enter_otp"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:autofillHints="123456" />
+
+
+        <Button
+            android:id="@+id/verify_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ripple_button"
+            android:fontFamily="@font/poppins"
+            android:text="@string/verify" />
+    </LinearLayout>
+
+
 </RelativeLayout>
