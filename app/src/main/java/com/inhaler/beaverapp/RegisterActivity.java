@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseException;
@@ -23,6 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private Button sendOtp;
     private EditText phoneNumber;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         sendOtp = (Button) findViewById(R.id.send_otp);
         phoneNumber = (EditText) findViewById(R.id.phone_input);
+        progressBar = (ProgressBar) findViewById(R.id.register_progressbar);
+
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -41,6 +45,8 @@ public class RegisterActivity extends AppCompatActivity {
                 boolean flag = Validate();
                 if(flag)
                 {
+                    sendOtp.setVisibility(View.GONE);
+                    progressBar.setVisibility(View.VISIBLE);
                     PhoneAuthOptions options =
                             PhoneAuthOptions.newBuilder(mAuth)
                                     .setPhoneNumber("+91"+phoneNumber.getText().toString())       // Phone number to verify
@@ -55,7 +61,8 @@ public class RegisterActivity extends AppCompatActivity {
                                         @Override
                                         public void onVerificationFailed(@NonNull FirebaseException e) {
                                             Toast.makeText(getApplicationContext(), "Otp Failed"+e.getMessage(), Toast.LENGTH_SHORT).show();
-
+                                            progressBar.setVisibility(View.GONE);
+                                            sendOtp.setVisibility(View.VISIBLE);
                                         }
 
                                         @Override
@@ -63,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                                             super.onCodeSent(verificationId, forceResendingToken);
 
 
-
+                                            progressBar.setVisibility(View.GONE);
                                             Intent verifyIntent = new Intent(getApplicationContext(),VerificationActivity.class);
                                             verifyIntent.putExtra("phonenumber",phoneNumber.getText().toString());
                                             verifyIntent.putExtra("backendotp",verificationId);

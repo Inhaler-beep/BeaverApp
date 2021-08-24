@@ -6,14 +6,17 @@
     <string name="Username">Gautham,</string>
     <string name="Beginner">Beginner</string>
     <string name="Intermediate">Intermediate</string>
-    <string name="enter_phone_number">Enter Phone Number</string>
-    <string name="send_otp">SEND OTP</string>
+    <string name="enter_phone_number">9999999999</string>
+    <string name="send_otp">Send OTP</string>
     <string name="verify">VERIFY</string>
-    <string name="enter_otp">Enter OTP</string>
+    <string name="enter_otp">Enter the 6 digit OTP you have received</string>
     <string name="lets_learn_english">Let\'s Get You Signed In</string>
     <string name="welcome_to_beaver">Sign Up</string>
     <string name="_91">+91</string>
     <string name="background_image">Background Image</string>
     <string name="please_enter_the_otp_that_you_have_recieved">Please Enter the OTP below</string>
     <string name="enter_a_valid_phone_number">Enter a valid phone number</string>
+    <string name="terms">By Signing Up, you agree to our </string>
+    <string name="terms_and_conditions"><u> Terms and Conditions</u></string>
+
 </resources>

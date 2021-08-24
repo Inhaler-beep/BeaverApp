@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,39 +14,63 @@
         android:background="@color/primary_variant" />
 
     <ImageView
-        android:layout_below="@id/top_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/top_view"
         android:scaleType="center"
         android:src="@drawable/ic_wave__1_" />
 
-
-    <TextView
-        android:id="@+id/welcome_message"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:elevation="8dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/welcome_to_beaver"
-        android:textColor="@color/white"
-        android:textSize="23sp"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/welcome_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:elevation="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/welcome_to_beaver"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:textStyle="bold" />
 
 
-    <TextView
-        android:id="@+id/letsget_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/welcome_message"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/lets_learn_english"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/letsget_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/lets_learn_english"
+                android:textColor="#78A8CD"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="end"
+           android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/login_64px"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
 
     <TextView
 
@@ -99,9 +124,9 @@
                 android:layout_height="wrap_content"
                 android:autofillHints="phone"
                 android:background="@drawable/text_input_bg"
+                android:drawableStart="@drawable/ic_baseline_call_24"
                 android:elevation="8dp"
                 android:fontFamily="@font/poppins_medium"
-                android:hint="@string/enter_phone_number"
                 android:inputType="phone"
                 android:padding="10dp"
                 android:textColor="@color/primary_variant"
@@ -109,14 +134,63 @@
         </LinearLayout>
 
 
-        <Button
-            android:id="@+id/send_otp"
+        <FrameLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/send_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ripple_button"
+                android:fontFamily="@font/poppins"
+                android:text="@string/send_otp" />
+
+            <ProgressBar
+                android:id="@+id/register_progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:indeterminate="true"
+                android:indeterminateTintMode="src_atop"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/primary_variant"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/terms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/ripple_button"
-            android:fontFamily="@font/poppins"
-            android:text="@string/send_otp" />
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/terms"
+            android:textColor="#989898"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/terms_and_conditions"
+            android:textColor="@color/Seconday_main"
+            android:textSize="12sp"
+           android:textStyle="bold" />
+
+
     </LinearLayout>
 
 
