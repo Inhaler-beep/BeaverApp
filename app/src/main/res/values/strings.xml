@@ -11,8 +11,9 @@
     <string name="verify">VERIFY</string>
     <string name="enter_otp">Enter OTP</string>
     <string name="lets_learn_english">Let\'s Get You Signed In</string>
-    <string name="welcome_to_beaver">Welcome to Beaver</string>
+    <string name="welcome_to_beaver">Sign Up</string>
     <string name="_91">+91</string>
     <string name="background_image">Background Image</string>
     <string name="please_enter_the_otp_that_you_have_recieved">Please Enter the OTP below</string>
+    <string name="enter_a_valid_phone_number">Enter a valid phone number</string>
 </resources>
