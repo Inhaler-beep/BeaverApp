@@ -111,14 +111,32 @@
             android:textSize="14sp" />
 
 
-        <Button
-            android:id="@+id/verify_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <FrameLayout
             android:layout_marginTop="20dp"
-            android:background="@drawable/ripple_button"
-            android:fontFamily="@font/poppins"
-            android:text="@string/verify" />
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/verify_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ripple_button"
+                android:fontFamily="@font/poppins"
+                android:text="@string/verify" />
+
+            <ProgressBar
+                android:id="@+id/verify_progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:indeterminate="true"
+                android:indeterminateTintMode="src_atop"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/primary_variant"/>
+
+        </FrameLayout>
+
     </LinearLayout>
 
 
