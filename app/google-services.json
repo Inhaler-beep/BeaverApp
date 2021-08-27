@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "339364059447",
+    "firebase_url": "https://beaver-education-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "beaver-education",
     "storage_bucket": "beaver-education.appspot.com"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "339364059447-epv64sv9c431kmk7b8qa65sj3rkqdihc.apps.googleusercontent.com",
+          "client_id": "339364059447-t96l5g7spa57u5jrebdoiprmujljbnj9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.inhaler.beaverapp",
-            "certificate_hash": "c0295c321b43ef31a4fe94ad94794c238fc9604c"
+            "certificate_hash": "1b7fd168c34ba2596adefa9e97d18d61e1135e03"
           }
         },
         {

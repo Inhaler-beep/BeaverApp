@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -25,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button sendOtp;
     private EditText phoneNumber;
     private ProgressBar progressBar;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         phoneNumber = (EditText) findViewById(R.id.phone_input);
         progressBar = (ProgressBar) findViewById(R.id.register_progressbar);
 
-
+        mAuth = FirebaseAuth.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
         sendOtp.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +87,21 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser!=null)
+        {
+            Intent homeIntent = new Intent(RegisterActivity.this,MainActivity.class);
+            startActivity(homeIntent);
+            finish();
+        }
+    }
+
     private Boolean Validate() {
+
         boolean flag = true;
         String phonenumber = phoneNumber.getText().toString();
         if(phonenumber.length() != 10)
@@ -102,6 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
         }
+
 
 
 

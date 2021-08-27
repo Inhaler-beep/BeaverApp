@@ -11,8 +11,8 @@
       android:id="@+id/frame_layout"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_above="@+id/meow_bottom_navigation"
-      android:layout_weight="1" />
+      android:layout_marginBottom="40dp"
+      />
   <com.etebarian.meowbottomnavigation.MeowBottomNavigation
       android:id="@+id/meow_bottom_navigation"
       android:layout_width="match_parent"
@@ -21,7 +21,6 @@
     android:layout_alignParentBottom="true"
     app:mbn_selectedIconColor="@color/primary_variant"
     app:mbn_countTextColor="@color/white"
-    app:mbn_countBackgroundColor="#E91E63"
     app:mbn_defaultIconColor="@color/primary_color"
     app:mbn_backgroundBottomColor="@color/white"
     />

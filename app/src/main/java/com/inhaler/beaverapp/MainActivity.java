@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
         meowBottomNavigation = (MeowBottomNavigation) findViewById(R.id.meow_bottom_navigation);
 
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_home));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.ic_account));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_book));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.premium_badge));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.reading_book));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_account));
 
         Fragment fragment = new HomeFragment();
         loadFristFragment(fragment);
