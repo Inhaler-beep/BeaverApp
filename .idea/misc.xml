@@ -5,13 +5,16 @@
       <map>
         <entry key="..\:/BeaverApp/app/src/main/res/drawable/bottom_round.xml" value="0.15" />
         <entry key="..\:/BeaverApp/app/src/main/res/drawable/card_round.xml" value="0.24166666666666667" />
+        <entry key="..\:/BeaverApp/app/src/main/res/drawable/course_title_bg.xml" value="0.2611111111111111" />
         <entry key="..\:/BeaverApp/app/src/main/res/drawable/lightblue_background.xml" value="0.23703703703703705" />
+        <entry key="..\:/BeaverApp/app/src/main/res/drawable/player_background.xml" value="0.24814814814814815" />
         <entry key="..\:/BeaverApp/app/src/main/res/drawable/register_background.xml" value="0.19166666666666668" />
         <entry key="..\:/BeaverApp/app/src/main/res/drawable/ripple_button.xml" value="0.23703703703703705" />
         <entry key="..\:/BeaverApp/app/src/main/res/drawable/spinner_background.xml" value="0.2712820512820513" />
         <entry key="..\:/BeaverApp/app/src/main/res/drawable/text_input_bg.xml" value="0.22685185185185186" />
         <entry key="..\:/BeaverApp/app/src/main/res/drawable/white_round.xml" value="0.22685185185185186" />
         <entry key="..\:/BeaverApp/app/src/main/res/drawable/white_round_background.xml" value="0.24166666666666667" />
+        <entry key="..\:/BeaverApp/app/src/main/res/layout/activity_course.xml" value="0.2389558232931727" />
         <entry key="..\:/BeaverApp/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/BeaverApp/app/src/main/res/layout/activity_main.xml" value="0.17255434782608695" />
         <entry key="..\:/BeaverApp/app/src/main/res/layout/activity_register.xml" value="0.176" />

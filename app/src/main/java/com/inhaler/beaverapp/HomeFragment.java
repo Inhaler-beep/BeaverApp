@@ -30,11 +30,13 @@ public class HomeFragment extends Fragment {
   Spinner spinner1;
   RecyclerView recyclerView;
   CourseAdapter adapter;
+  private Bundle savedInstances;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        savedInstanceState = savedInstances;
 
 
     }
@@ -45,7 +47,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
         spinner1 = (Spinner) view.findViewById(R.id.difficulty_level);
         recyclerView = (RecyclerView) view.findViewById(R.id.course_recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new WrapContentLinearLayoutManager(getContext()));
         String[] levels = {"Beginner","Intermediate","Advanced"};
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(),R.layout.style_spinner, levels);
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
@@ -89,7 +91,7 @@ public class HomeFragment extends Fragment {
                         .setQuery(query, CourseModel.class)
                         .build();
 
-        adapter = new CourseAdapter(options,"Beginner");
+        adapter = new CourseAdapter(options,"Beginner",getContext());
         recyclerView.setAdapter(adapter);
         return view;
     }
@@ -101,20 +103,13 @@ public class HomeFragment extends Fragment {
                 new FirebaseRecyclerOptions.Builder<CourseModel>()
                         .setQuery(query, CourseModel.class)
                         .build();
-        adapter = new CourseAdapter(options,level);
+        adapter = new CourseAdapter(options,level,getContext());
         recyclerView.setAdapter(adapter);
         adapter.startListening();
+
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        adapter.startListening();
-    }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
+
+
 }

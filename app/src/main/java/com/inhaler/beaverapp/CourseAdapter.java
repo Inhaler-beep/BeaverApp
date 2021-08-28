@@ -1,5 +1,7 @@
 package com.inhaler.beaverapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.ColorSpace;
 import android.view.LayoutInflater;
@@ -19,11 +21,13 @@ public class CourseAdapter extends FirebaseRecyclerAdapter<CourseModel,CourseAda
 {
 
     private String level = "";
+    private final Context mContext;
 
 
-    public CourseAdapter(@NonNull FirebaseRecyclerOptions<CourseModel> options,String level) {
+    public CourseAdapter(@NonNull FirebaseRecyclerOptions<CourseModel> options, String level, Context context) {
         super(options);
         this.level = level;
+        this.mContext = context;
     }
 
     @Override
@@ -37,6 +41,9 @@ public class CourseAdapter extends FirebaseRecyclerAdapter<CourseModel,CourseAda
                 if(level.equals("Beginner"))
                 {
                     Toast.makeText(v.getContext(), "Beginner"+holder.getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                    mContext.startActivity(new Intent(mContext, CourseActivity.class));
+
+
                 }
                 else if(level.equals("Intermediate"))
                 {
