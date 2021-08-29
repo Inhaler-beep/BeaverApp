@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
 
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/first_card_view"
@@ -47,6 +48,27 @@
                 android:text="Introduction to Grammar"
                 android:textColor="@color/primary_variant"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="end">
+                <com.moos.library.CircleProgressView
+                    android:id="@+id/progressView_circle"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:progressTextSize="12sp"
+                    android:textAlignment="center"
+                    app:start_progress="0"
+                    app:end_progress="60"
+                    app:start_color="@color/purple_end"
+                    app:end_color="@color/purple_start"
+                    app:circleBroken="false"
+                    app:isTracked="true"
+                    app:track_width="5dp"/>
+            </LinearLayout>
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

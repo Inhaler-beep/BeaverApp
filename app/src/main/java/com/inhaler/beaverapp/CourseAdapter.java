@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.moos.library.CircleProgressView;
 
 public class CourseAdapter extends FirebaseRecyclerAdapter<CourseModel,CourseAdapter.CourseViewHolder>
 {
@@ -76,12 +77,26 @@ public class CourseAdapter extends FirebaseRecyclerAdapter<CourseModel,CourseAda
 
         TextView LessonNumber,LessonName;
         CardView cardView;
+        CircleProgressView circleProgressView;
 
         public CourseViewHolder(@NonNull View itemView) {
             super(itemView);
             LessonName = itemView.findViewById(R.id.lesson_title);
             LessonNumber = itemView.findViewById(R.id.lesson_number);
             cardView = itemView.findViewById(R.id.first_card_view);
+            circleProgressView = itemView.findViewById(R.id.progressView_circle);
+            circleProgressView.setStartProgress(0);
+            circleProgressView.setEndProgress(80);
+            circleProgressView.setStartColor(Color.parseColor("#78e08f"));
+            circleProgressView.setEndColor(Color.parseColor("#079992"));
+            circleProgressView.setCircleBroken(false);
+            circleProgressView.setTrackWidth(12);
+            circleProgressView.setProgressDuration(1000);
+            circleProgressView.setTrackEnabled(true);
+            circleProgressView.setFillEnabled(false);
+            circleProgressView.setProgressTextColor(Color.parseColor("#079992"));
+            circleProgressView.startProgressAnimation();
+            circleProgressView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
         }
     }

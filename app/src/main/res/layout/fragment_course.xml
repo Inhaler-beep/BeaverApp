@@ -3,7 +3,165 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CourseFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:id="@+id/text_linear"
+            android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_variant"
+
+                    android:text="Name"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_color"
+
+                    android:text="Level"/>
+
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circular_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <View
+            android:id="@+id/account_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#7A7979"
+            android:layout_margin="20dp"
+            android:layout_below="@id/circular_image_view"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@id/account_view"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/beginner_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@drawable/card_round"
+                    android:elevation="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/Beginner"
+                        android:textColor="@color/Seconday_main"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <com.moos.library.HorizontalProgressView
+                        android:id="@+id/progressView_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="2dp"
+                        app:corner_radius="12dp"
+                        app:end_color="@color/primary_variant"
+                        app:end_progress="60"
+                        app:isTracked="true"
+                        app:progressTextColor="#696969"
+                        app:start_color="@color/primary_color"
+                        app:trackColor="#f4f4f4"
+                        app:track_width="12dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/intermediate_layout"
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/beginner_layout"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@drawable/card_round"
+                    android:elevation="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/Intermediate"
+                        android:textColor="@color/primary_yello"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <com.moos.library.HorizontalProgressView
+                        android:id="@+id/progressView_horizontal_inter"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="2dp"
+                        app:corner_radius="12dp"
+                        app:end_color="@color/primary_variant"
+                        app:end_progress="60"
+                        app:isTracked="true"
+                        app:progressTextColor="#696969"
+                        app:start_color="@color/primary_color"
+                        app:trackColor="#f4f4f4"
+                        app:track_width="12dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+
 
 
 
